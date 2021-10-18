@@ -72,24 +72,7 @@
                 "oldName": "telefono"
               }
             ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Empresas_Vacantes_1",
-                "fields": [
-                  "rif"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Vacantes",
-                "referencedFields": [
-                  "rif_empresa"
-                ],
-                "sourceCardinality": "NoneRelationship",
-                "targetCardinality": "NoneRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
+            "foreignKeys": [],
             "indexes": [],
             "uniques": [],
             "primaryKey": {
@@ -97,102 +80,6 @@
               "name": "",
               "fields": [
                 "rif"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "Vacantes",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "codigo",
-                "type": "INT",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "codigo"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "posicion",
-                "type": "CHAR VARYING",
-                "length": 100,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "posicion"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "es_remota",
-                "type": "BOOL",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "es_remota"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "fecha_publicacion",
-                "type": "DATE",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "fecha_publicacion"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "rif_empresa",
-                "type": "CHAR VARYING",
-                "length": 30,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "rif_empresa"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Vacantes_Postulaciones_1",
-                "fields": [
-                  "codigo"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Postulaciones",
-                "referencedFields": [
-                  "codigo_vacante"
-                ],
-                "sourceCardinality": "NoneRelationship",
-                "targetCardinality": "NoneRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "codigo"
               ],
               "oldName": ""
             }
@@ -307,8 +194,8 @@
                 "referencedFields": [
                   "codigo"
                 ],
-                "sourceCardinality": "NoneRelationship",
-                "targetCardinality": "NoneRelationship",
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
                 "comment": "",
                 "oldName": ""
               },
@@ -323,8 +210,8 @@
                 "referencedFields": [
                   "codigo_habilidad"
                 ],
-                "sourceCardinality": "NoneRelationship",
-                "targetCardinality": "NoneRelationship",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
                 "comment": "",
                 "oldName": ""
               }
@@ -474,8 +361,8 @@
                 "referencedFields": [
                   "codigo"
                 ],
-                "sourceCardinality": "NoneRelationship",
-                "targetCardinality": "NoneRelationship",
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
                 "comment": "",
                 "oldName": ""
               }
@@ -487,152 +374,6 @@
               "name": "",
               "fields": [
                 "cedula"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "Postulaciones",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "codigo_vacante",
-                "type": "INT",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "codigo_vacante"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "cedula_candidato",
-                "type": "CHAR VARYING",
-                "length": 30,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "cedula_candidato"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "fecha_postulacion",
-                "type": "DATE",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "fecha_postulacion"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "status",
-                "type": "CHAR VARYING",
-                "length": 20,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "status"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Postulaciones_Candidatos_1",
-                "fields": [
-                  "cedula_candidato"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Candidatos",
-                "referencedFields": [
-                  "cedula"
-                ],
-                "sourceCardinality": "NoneRelationship",
-                "targetCardinality": "NoneRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "codigo_vacante",
-                "cedula_candidato"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "HabilidadesCandidatos",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "cedula_candidato",
-                "type": "CHAR VARYING",
-                "length": 30,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "cedula_candidato"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "codigo_habilidad",
-                "type": "INT",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "codigo_habilidad"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_HabilidadesCandidatos_Candidatos_1",
-                "fields": [
-                  "cedula_candidato"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Candidatos",
-                "referencedFields": [
-                  "cedula"
-                ],
-                "sourceCardinality": "NoneRelationship",
-                "targetCardinality": "NoneRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "cedula_candidato",
-                "codigo_habilidad"
               ],
               "oldName": ""
             }
@@ -680,8 +421,8 @@
                 "referencedFields": [
                   "codigo"
                 ],
-                "sourceCardinality": "NoneRelationship",
-                "targetCardinality": "NoneRelationship",
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
                 "comment": "",
                 "oldName": ""
               },
@@ -696,8 +437,8 @@
                 "referencedFields": [
                   "codigo"
                 ],
-                "sourceCardinality": "NoneRelationship",
-                "targetCardinality": "NoneRelationship",
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
                 "comment": "",
                 "oldName": ""
               }
@@ -709,6 +450,264 @@
               "name": "",
               "fields": [
                 "codigo_vacante",
+                "codigo_habilidad"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Vacantes",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "posicion",
+                "type": "CHAR VARYING",
+                "length": 100,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "posicion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "es_remota",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "es_remota"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "fecha_publicacion",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "fecha_publicacion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "rif_empresa",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "rif_empresa"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Vacantes_Postulaciones_1",
+                "fields": [
+                  "codigo"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Postulaciones",
+                "referencedFields": [
+                  "codigo_vacante"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Vacantes_Empresas_1",
+                "fields": [
+                  "rif_empresa"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Empresas",
+                "referencedFields": [
+                  "rif"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "codigo"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Postulaciones",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo_vacante",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo_vacante"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cedula_candidato",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cedula_candidato"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "fecha_postulacion",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "fecha_postulacion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "status",
+                "type": "CHAR VARYING",
+                "length": 20,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "status"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Postulaciones_Candidatos_1",
+                "fields": [
+                  "cedula_candidato"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Candidatos",
+                "referencedFields": [
+                  "cedula"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "codigo_vacante",
+                "cedula_candidato"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "HabilidadesCandidatos",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cedula_candidato",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cedula_candidato"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo_habilidad",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo_habilidad"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_HabilidadesCandidatos_Candidatos_1",
+                "fields": [
+                  "cedula_candidato"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Candidatos",
+                "referencedFields": [
+                  "cedula"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "cedula_candidato",
                 "codigo_habilidad"
               ],
               "oldName": ""
@@ -736,8 +735,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Empresas",
-          "x": 100,
-          "y": 100,
+          "x": 510,
+          "y": 300,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -752,8 +751,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Vacantes",
-          "x": 500,
-          "y": 100,
+          "x": 910,
+          "y": 300,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -768,8 +767,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Habilidades",
-          "x": 500,
-          "y": 900,
+          "x": 910,
+          "y": 1100,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -784,8 +783,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Categorias",
-          "x": 100,
-          "y": 900,
+          "x": 510,
+          "y": 1100,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -800,8 +799,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Candidatos",
-          "x": 900,
-          "y": 500,
+          "x": 1310,
+          "y": 700,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -816,8 +815,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Paises",
-          "x": 1300,
-          "y": 500,
+          "x": 1710,
+          "y": 700,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -832,8 +831,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "HabilidadesVacantes",
-          "x": 500,
-          "y": 500,
+          "x": 910,
+          "y": 700,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -848,8 +847,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Postulaciones",
-          "x": 900,
-          "y": 100,
+          "x": 1310,
+          "y": 300,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -864,8 +863,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "HabilidadesCandidatos",
-          "x": 900,
-          "y": 900,
+          "x": 1310,
+          "y": 1100,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -880,48 +879,6 @@
       "layers": [],
       "relations": [
         {
-          "name": "fk_Empresas_Vacantes_1",
-          "sourceTableName": "Empresas",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 315,
-              "y": 200
-            },
-            {
-              "x": 400,
-              "y": 200
-            },
-            {
-              "x": 400,
-              "y": 200
-            },
-            {
-              "x": 485,
-              "y": 200
-            }
-          ],
-          "label": {
-            "x": 305,
-            "y": 162,
-            "width": 169,
-            "height": 30,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 204,
-              "g": 204,
-              "b": 204,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
           "name": "fk_Habilidad_Categorias_1",
           "sourceTableName": "Habilidades",
           "sourceSchemaName": "Default",
@@ -929,25 +886,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 485,
-              "y": 1000
+              "x": 895,
+              "y": 1200
             },
             {
-              "x": 400,
-              "y": 1000
+              "x": 810,
+              "y": 1200
             },
             {
-              "x": 400,
-              "y": 1000
+              "x": 810,
+              "y": 1200
             },
             {
-              "x": 315,
-              "y": 1000
+              "x": 725,
+              "y": 1200
             }
           ],
           "label": {
-            "x": 312,
-            "y": 962,
+            "x": 722,
+            "y": 1162,
             "width": 183,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -971,25 +928,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 1115,
-              "y": 600
+              "x": 1525,
+              "y": 800
             },
             {
-              "x": 1200,
-              "y": 600
+              "x": 1610,
+              "y": 800
             },
             {
-              "x": 1200,
-              "y": 600
+              "x": 1610,
+              "y": 800
             },
             {
-              "x": 1285,
-              "y": 600
+              "x": 1695,
+              "y": 800
             }
           ],
           "label": {
-            "x": 1105,
-            "y": 562,
+            "x": 1515,
+            "y": 762,
             "width": 162,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -1013,25 +970,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 715,
-              "y": 200
+              "x": 1125,
+              "y": 400
             },
             {
-              "x": 800,
-              "y": 200
+              "x": 1210,
+              "y": 400
             },
             {
-              "x": 800,
-              "y": 200
+              "x": 1210,
+              "y": 400
             },
             {
-              "x": 885,
-              "y": 200
+              "x": 1295,
+              "y": 400
             }
           ],
           "label": {
-            "x": 705,
-            "y": 162,
+            "x": 1115,
+            "y": 362,
             "width": 198,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -1055,25 +1012,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 1000,
-              "y": 315
+              "x": 1410,
+              "y": 515
             },
             {
-              "x": 1000,
-              "y": 600
+              "x": 1410,
+              "y": 800
             },
             {
-              "x": 1000,
-              "y": 600
+              "x": 1410,
+              "y": 800
             },
             {
-              "x": 1000,
-              "y": 485
+              "x": 1410,
+              "y": 685
             }
           ],
           "label": {
-            "x": 1008,
-            "y": 305,
+            "x": 1418,
+            "y": 505,
             "width": 214,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -1097,25 +1054,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 715,
-              "y": 1000
+              "x": 1125,
+              "y": 1200
             },
             {
-              "x": 800,
-              "y": 1000
+              "x": 1210,
+              "y": 1200
             },
             {
-              "x": 800,
-              "y": 1000
+              "x": 1210,
+              "y": 1200
             },
             {
-              "x": 885,
-              "y": 1000
+              "x": 1295,
+              "y": 1200
             }
           ],
           "label": {
-            "x": 705,
-            "y": 962,
+            "x": 1115,
+            "y": 1162,
             "width": 282,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -1139,25 +1096,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 1000,
-              "y": 885
+              "x": 1410,
+              "y": 1085
             },
             {
-              "x": 1000,
-              "y": 800
+              "x": 1410,
+              "y": 1000
             },
             {
-              "x": 1000,
-              "y": 800
+              "x": 1410,
+              "y": 1000
             },
             {
-              "x": 1000,
-              "y": 715
+              "x": 1410,
+              "y": 915
             }
           ],
           "label": {
-            "x": 1008,
-            "y": 865,
+            "x": 1418,
+            "y": 1065,
             "width": 278,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -1181,25 +1138,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 600,
-              "y": 485
+              "x": 1010,
+              "y": 685
             },
             {
-              "x": 600,
-              "y": 400
+              "x": 1010,
+              "y": 600
             },
             {
-              "x": 600,
-              "y": 400
+              "x": 1010,
+              "y": 600
             },
             {
-              "x": 600,
-              "y": 315
+              "x": 1010,
+              "y": 515
             }
           ],
           "label": {
-            "x": 608,
-            "y": 465,
+            "x": 1018,
+            "y": 665,
             "width": 246,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -1223,26 +1180,68 @@
           "visible": true,
           "vertices": [
             {
-              "x": 600,
-              "y": 715
+              "x": 1010,
+              "y": 915
             },
             {
-              "x": 600,
-              "y": 800
+              "x": 1010,
+              "y": 1000
             },
             {
-              "x": 600,
-              "y": 800
+              "x": 1010,
+              "y": 1000
             },
             {
-              "x": 600,
-              "y": 885
+              "x": 1010,
+              "y": 1085
             }
           ],
           "label": {
-            "x": 608,
-            "y": 705,
+            "x": 1018,
+            "y": 905,
             "width": 266,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Vacantes_Empresas_1",
+          "sourceTableName": "Vacantes",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 895,
+              "y": 400
+            },
+            {
+              "x": 810,
+              "y": 400
+            },
+            {
+              "x": 810,
+              "y": 400
+            },
+            {
+              "x": 725,
+              "y": 400
+            }
+          ],
+          "label": {
+            "x": 736,
+            "y": 362,
+            "width": 169,
             "height": 30,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
