@@ -198,22 +198,6 @@
                 "targetCardinality": "OneAndOnlyOneRelationship",
                 "comment": "",
                 "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Habilidades_HabilidadesCandidatos_1",
-                "fields": [
-                  "codigo"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "HabilidadesCandidatos",
-                "referencedFields": [
-                  "codigo_habilidad"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ZeroOrManyRelationship",
-                "comment": "",
-                "oldName": ""
               }
             ],
             "indexes": [],
@@ -525,22 +509,6 @@
             "foreignKeys": [
               {
                 "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Vacantes_Postulaciones_1",
-                "fields": [
-                  "codigo"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Postulaciones",
-                "referencedFields": [
-                  "codigo_vacante"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ZeroOrManyRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
                 "name": "fk_Vacantes_Empresas_1",
                 "fields": [
                   "rif_empresa"
@@ -638,6 +606,22 @@
                 "targetCardinality": "ZeroOrManyRelationship",
                 "comment": "",
                 "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Postulaciones_Vacantes_1",
+                "fields": [
+                  "codigo_vacante"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Vacantes",
+                "referencedFields": [
+                  "codigo"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
               }
             ],
             "indexes": [],
@@ -694,6 +678,22 @@
                 "referencedTable": "Candidatos",
                 "referencedFields": [
                   "cedula"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_HabilidadesCandidatos_Habilidades_1",
+                "fields": [
+                  "codigo_habilidad"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Habilidades",
+                "referencedFields": [
+                  "codigo"
                 ],
                 "sourceCardinality": "ZeroOrManyRelationship",
                 "targetCardinality": "OneAndOnlyOneRelationship",
@@ -963,48 +963,6 @@
           }
         },
         {
-          "name": "fk_Vacantes_Postulaciones_1",
-          "sourceTableName": "Vacantes",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1125,
-              "y": 400
-            },
-            {
-              "x": 1210,
-              "y": 400
-            },
-            {
-              "x": 1210,
-              "y": 400
-            },
-            {
-              "x": 1295,
-              "y": 400
-            }
-          ],
-          "label": {
-            "x": 1115,
-            "y": 362,
-            "width": 198,
-            "height": 30,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 204,
-              "g": 204,
-              "b": 204,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
           "name": "fk_Postulaciones_Candidatos_1",
           "sourceTableName": "Postulaciones",
           "sourceSchemaName": "Default",
@@ -1032,48 +990,6 @@
             "x": 1418,
             "y": 505,
             "width": 214,
-            "height": 30,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 204,
-              "g": 204,
-              "b": 204,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Habilidades_HabilidadesCandidatos_1",
-          "sourceTableName": "Habilidades",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1125,
-              "y": 1200
-            },
-            {
-              "x": 1210,
-              "y": 1200
-            },
-            {
-              "x": 1210,
-              "y": 1200
-            },
-            {
-              "x": 1295,
-              "y": 1200
-            }
-          ],
-          "label": {
-            "x": 1115,
-            "y": 1162,
-            "width": 282,
             "height": 30,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
@@ -1242,6 +1158,90 @@
             "x": 736,
             "y": 362,
             "width": 169,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_HabilidadesCandidatos_Habilidades_1",
+          "sourceTableName": "HabilidadesCandidatos",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1295,
+              "y": 1200
+            },
+            {
+              "x": 1210,
+              "y": 1200
+            },
+            {
+              "x": 1210,
+              "y": 1200
+            },
+            {
+              "x": 1125,
+              "y": 1200
+            }
+          ],
+          "label": {
+            "x": 1023,
+            "y": 1162,
+            "width": 282,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Postulaciones_Vacantes_1",
+          "sourceTableName": "Postulaciones",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1295,
+              "y": 400
+            },
+            {
+              "x": 1210,
+              "y": 400
+            },
+            {
+              "x": 1210,
+              "y": 400
+            },
+            {
+              "x": 1125,
+              "y": 400
+            }
+          ],
+          "label": {
+            "x": 1107,
+            "y": 362,
+            "width": 198,
             "height": 30,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
