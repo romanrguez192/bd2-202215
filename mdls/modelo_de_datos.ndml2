@@ -168,6 +168,66 @@
                 "oldName": "rif_empresa"
               }
             ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Vacantes_Postulaciones_1",
+                "fields": [
+                  "codigo"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Postulaciones",
+                "referencedFields": [
+                  "codigo_vacante"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "codigo"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Categorias",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nombre",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nombre"
+              }
+            ],
             "foreignKeys": [],
             "indexes": [],
             "uniques": [],
@@ -182,7 +242,7 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "Habilidad",
+            "name": "Habilidades",
             "comment": "",
             "oldName": "",
             "fields": [
@@ -224,7 +284,7 @@
               },
               {
                 "objectType": "TableField_LOGICAL",
-                "name": "categoria",
+                "name": "codigo_categoria",
                 "type": "INT",
                 "length": 255,
                 "decimals": 0,
@@ -232,7 +292,83 @@
                 "defaultType": "None",
                 "defaultValue": "",
                 "comment": "",
-                "oldName": "categoria"
+                "oldName": "codigo_categoria"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Habilidad_Categorias_1",
+                "fields": [
+                  "codigo_categoria"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Categorias",
+                "referencedFields": [
+                  "codigo"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Habilidades_HabilidadesCandidatos_1",
+                "fields": [
+                  "codigo"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "HabilidadesCandidatos",
+                "referencedFields": [
+                  "codigo_habilidad"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "codigo"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Paises",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nombre",
+                "type": "CHAR VARYING",
+                "length": 100,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nombre"
               }
             ],
             "foreignKeys": [],
@@ -249,13 +385,334 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "Categorias",
+            "name": "Candidatos",
             "comment": "",
             "oldName": "",
-            "fields": [],
-            "foreignKeys": [],
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cedula",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cedula"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nombre",
+                "type": "CHAR VARYING",
+                "length": 100,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nombre"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "apellido",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "apellido"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "direccion",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "direccion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "telefono",
+                "type": "CHAR VARYING",
+                "length": 20,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "telefono"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo_pais",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo_pais"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Candidatos_Paises_1",
+                "fields": [
+                  "codigo_pais"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Paises",
+                "referencedFields": [
+                  "codigo"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
             "indexes": [],
-            "uniques": []
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "cedula"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Postulaciones",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo_vacante",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo_vacante"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cedula_candidato",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cedula_candidato"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "fecha_postulacion",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "fecha_postulacion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "status",
+                "type": "CHAR VARYING",
+                "length": 20,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "status"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Postulaciones_Candidatos_1",
+                "fields": [
+                  "cedula_candidato"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Candidatos",
+                "referencedFields": [
+                  "cedula"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "codigo_vacante",
+                "cedula_candidato"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "HabilidadesCandidatos",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cedula_candidato",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cedula_candidato"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo_habilidad",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo_habilidad"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_HabilidadesCandidatos_Candidatos_1",
+                "fields": [
+                  "cedula_candidato"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Candidatos",
+                "referencedFields": [
+                  "cedula"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "cedula_candidato",
+                "codigo_habilidad"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "HabilidadesVacantes",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo_vacante",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo_vacante"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo_habilidad",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo_habilidad"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_HabilidadesVacantes_Vacantes_1",
+                "fields": [
+                  "codigo_vacante"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Vacantes",
+                "referencedFields": [
+                  "codigo"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_HabilidadesVacantes_Habilidades_1",
+                "fields": [
+                  "codigo_habilidad"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Habilidades",
+                "referencedFields": [
+                  "codigo"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "codigo_vacante",
+                "codigo_habilidad"
+              ],
+              "oldName": ""
+            }
           }
         ]
       }
@@ -264,7 +721,7 @@
   "diagrams": [
     {
       "name": "Diagram 1",
-      "paperWidth": 1,
+      "paperWidth": 2,
       "paperHeight": 1,
       "tableFont": "Arial Unicode MS",
       "tableFontSize": 14,
@@ -310,9 +767,9 @@
         {
           "type": "table",
           "schemaName": "Default",
-          "tableName": "Habilidad",
+          "tableName": "Habilidades",
           "x": 500,
-          "y": 500,
+          "y": 900,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -328,7 +785,87 @@
           "schemaName": "Default",
           "tableName": "Categorias",
           "x": 100,
+          "y": 900,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Candidatos",
+          "x": 900,
           "y": 500,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Paises",
+          "x": 1300,
+          "y": 500,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "HabilidadesVacantes",
+          "x": 500,
+          "y": 500,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Postulaciones",
+          "x": 900,
+          "y": 100,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "HabilidadesCandidatos",
+          "x": 900,
+          "y": 900,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -370,6 +907,342 @@
             "x": 305,
             "y": 162,
             "width": 169,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Habilidad_Categorias_1",
+          "sourceTableName": "Habilidades",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 485,
+              "y": 1000
+            },
+            {
+              "x": 400,
+              "y": 1000
+            },
+            {
+              "x": 400,
+              "y": 1000
+            },
+            {
+              "x": 315,
+              "y": 1000
+            }
+          ],
+          "label": {
+            "x": 312,
+            "y": 962,
+            "width": 183,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Candidatos_Paises_1",
+          "sourceTableName": "Candidatos",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1115,
+              "y": 600
+            },
+            {
+              "x": 1200,
+              "y": 600
+            },
+            {
+              "x": 1200,
+              "y": 600
+            },
+            {
+              "x": 1285,
+              "y": 600
+            }
+          ],
+          "label": {
+            "x": 1105,
+            "y": 562,
+            "width": 162,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Vacantes_Postulaciones_1",
+          "sourceTableName": "Vacantes",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 715,
+              "y": 200
+            },
+            {
+              "x": 800,
+              "y": 200
+            },
+            {
+              "x": 800,
+              "y": 200
+            },
+            {
+              "x": 885,
+              "y": 200
+            }
+          ],
+          "label": {
+            "x": 705,
+            "y": 162,
+            "width": 198,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Postulaciones_Candidatos_1",
+          "sourceTableName": "Postulaciones",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1000,
+              "y": 315
+            },
+            {
+              "x": 1000,
+              "y": 600
+            },
+            {
+              "x": 1000,
+              "y": 600
+            },
+            {
+              "x": 1000,
+              "y": 485
+            }
+          ],
+          "label": {
+            "x": 1008,
+            "y": 305,
+            "width": 214,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Habilidades_HabilidadesCandidatos_1",
+          "sourceTableName": "Habilidades",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 715,
+              "y": 1000
+            },
+            {
+              "x": 800,
+              "y": 1000
+            },
+            {
+              "x": 800,
+              "y": 1000
+            },
+            {
+              "x": 885,
+              "y": 1000
+            }
+          ],
+          "label": {
+            "x": 705,
+            "y": 962,
+            "width": 282,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_HabilidadesCandidatos_Candidatos_1",
+          "sourceTableName": "HabilidadesCandidatos",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1000,
+              "y": 885
+            },
+            {
+              "x": 1000,
+              "y": 800
+            },
+            {
+              "x": 1000,
+              "y": 800
+            },
+            {
+              "x": 1000,
+              "y": 715
+            }
+          ],
+          "label": {
+            "x": 1008,
+            "y": 865,
+            "width": 278,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_HabilidadesVacantes_Vacantes_1",
+          "sourceTableName": "HabilidadesVacantes",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 600,
+              "y": 485
+            },
+            {
+              "x": 600,
+              "y": 400
+            },
+            {
+              "x": 600,
+              "y": 400
+            },
+            {
+              "x": 600,
+              "y": 315
+            }
+          ],
+          "label": {
+            "x": 608,
+            "y": 465,
+            "width": 246,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_HabilidadesVacantes_Habilidades_1",
+          "sourceTableName": "HabilidadesVacantes",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 600,
+              "y": 715
+            },
+            {
+              "x": 600,
+              "y": 800
+            },
+            {
+              "x": 600,
+              "y": 800
+            },
+            {
+              "x": 600,
+              "y": 885
+            }
+          ],
+          "label": {
+            "x": 608,
+            "y": 705,
+            "width": 266,
             "height": 30,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
