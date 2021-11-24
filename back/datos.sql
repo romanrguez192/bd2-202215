@@ -54,8 +54,8 @@ INSERT INTO `Postulaciones` (`codigo_vacante`, `cedula_candidato`, `fecha_postul
 INSERT INTO `Postulaciones` (`codigo_vacante`, `cedula_candidato`, `fecha_postulacion`, `status`) VALUES (4, 28678109, '2021-10-26', 'pendiente');
 INSERT INTO `Postulaciones` (`codigo_vacante`, `cedula_candidato`, `fecha_postulacion`, `status`) VALUES (5, 25901732, '2021-10-24', 'pendiente');
 INSERT INTO `Postulaciones` (`codigo_vacante`, `cedula_candidato`, `fecha_postulacion`, `status`) VALUES (5, 28678109, '2021-10-23', 'rechazada');
-INSERT INTO `Vacantes` (`codigo`, `posicion`, `es_remota`, `fecha_publicacion`, `rif_empresa`) VALUES (1, 'Líder', 1, '2021-10-20', '527894092');
-INSERT INTO `Vacantes` (`codigo`, `posicion`, `es_remota`, `fecha_publicacion`, `rif_empresa`) VALUES (2, 'Gerente de TI', 0, '2021-09-15', '796783210');
-INSERT INTO `Vacantes` (`codigo`, `posicion`, `es_remota`, `fecha_publicacion`, `rif_empresa`) VALUES (3, 'Empleado', 0, '2021-10-14', '589072654');
-INSERT INTO `Vacantes` (`codigo`, `posicion`, `es_remota`, `fecha_publicacion`, `rif_empresa`) VALUES (4, 'Asistente', 1, '2021-10-06', '825720917');
-INSERT INTO `Vacantes` (`codigo`, `posicion`, `es_remota`, `fecha_publicacion`, `rif_empresa`) VALUES (5, 'Analista', 1, '2021-09-17', '476821189');
+INSERT INTO `Vacantes` (`codigo`, `posicion`, `es_remota`, `fecha_publicacion`, `rif_empresa`, `fecha_vencimiento`, `cedula_candidato_seleccionado`) VALUES (1, 'Líder', 1, '2021-10-20', '527894092', '2022-04-20', NULL);
+INSERT INTO `Vacantes` (`codigo`, `posicion`, `es_remota`, `fecha_publicacion`, `rif_empresa`, `fecha_vencimiento`, `cedula_candidato_seleccionado`) VALUES (2, 'Gerente de TI', 0, '2021-09-15', '796783210', '2021-11-30', NULL);
+INSERT INTO `Vacantes` (`codigo`, `posicion`, `es_remota`, `fecha_publicacion`, `rif_empresa`, `fecha_vencimiento`, `cedula_candidato_seleccionado`) VALUES (3, 'Empleado', 0, '2021-10-14', '589072654', '2021-11-16', NULL);
+INSERT INTO `Vacantes` (`codigo`, `posicion`, `es_remota`, `fecha_publicacion`, `rif_empresa`, `fecha_vencimiento`, `cedula_candidato_seleccionado`) VALUES (4, 'Asistente', 1, '2021-10-06', '825720917', '2021-11-28', 28678109);
+INSERT INTO `Vacantes` (`codigo`, `posicion`, `es_remota`, `fecha_publicacion`, `rif_empresa`, `fecha_vencimiento`, `cedula_candidato_seleccionado`) VALUES (5, 'Analista', 1, '2021-09-17', '476821189', '2022-01-04', NULL);
