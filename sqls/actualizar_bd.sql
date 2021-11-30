@@ -8,4 +8,5 @@ REFERENCES Candidatos(cedula);
 -- Actualización prácica 06
 ALTER TABLE Vacantes
 ADD COLUMN pagada INT NOT NULL,
+ADD COLUMN porcentaje_promocional INT NOT NULL,
 MODIFY fecha_vencimiento DATE;
