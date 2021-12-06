@@ -1,0 +1,12 @@
+DELIMITER $$
+
+CREATE PROCEDURE sp_4()
+BEGIN
+
+	UPDATE Vacantes
+	SET inactiva = 1
+	WHERE 
+
+END$$
+
+DELIMITER ;

@@ -15,3 +15,6 @@ MODIFY fecha_vencimiento DATE;
 ALTER TABLE Candidatos
 ADD COLUMN codigo_validacion INT,
 ADD COLUMN validado INT NOT NULL;
+
+ALTER TABLE Vacantes
+ADD COLUMN inactiva INT NOT NULL;
