@@ -10,3 +10,8 @@ ALTER TABLE Vacantes
 ADD COLUMN pagada INT NOT NULL,
 ADD COLUMN porcentaje_promocional INT NOT NULL,
 MODIFY fecha_vencimiento DATE;
+
+-- Actualización práctica 07
+ALTER TABLE Candidatos
+ADD COLUMN codigo_validacion INT,
+ADD COLUMN validado INT NOT NULL;
