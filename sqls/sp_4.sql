@@ -5,7 +5,8 @@ BEGIN
 
 	UPDATE Vacantes
 	SET inactiva = 1
-	WHERE 
+	WHERE (NOT pagada AND DATEDIFF(NOW(), fecha_publicacion) > 3)
+	OR NOW() > fecha_vencimiento;
 
 END$$
 
