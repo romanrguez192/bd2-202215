@@ -18,3 +18,7 @@ ADD COLUMN validado INT NOT NULL;
 
 ALTER TABLE Vacantes
 ADD COLUMN inactiva INT NOT NULL;
+
+-- Actualización práctica 08
+ALTER TABLE Vacantes
+ADD COLUMN fecha_pago DATE;
