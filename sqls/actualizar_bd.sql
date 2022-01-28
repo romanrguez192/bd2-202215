@@ -22,3 +22,7 @@ ADD COLUMN inactiva INT NOT NULL;
 -- Actualización práctica 08
 ALTER TABLE Vacantes
 ADD COLUMN fecha_pago DATE;
+
+-- Actualización práctica 09
+ALTER TABLE Vacantes
+ADD COLUMN expectativa_salarial DECIMAL(12, 2);
