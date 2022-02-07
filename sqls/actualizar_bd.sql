@@ -26,3 +26,7 @@ ADD COLUMN fecha_pago DATE;
 -- Actualización práctica 09
 ALTER TABLE Vacantes
 ADD COLUMN expectativa_salarial DECIMAL(12, 2);
+
+-- Actualzación práctica 10
+ALTER TABLE Candidatos
+ADD COLUMN fecha_registro DATE NOT NULL;
