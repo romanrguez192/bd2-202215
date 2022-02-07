@@ -1,0 +1,7 @@
+CREATE EVENT EventoSuspenderVacantes
+ON SCHEDULE EVERY 1 DAY
+STARTS (CURRENT_DATE + INTERVAL 1 DAY + INTERVAL 23 HOUR)
+DO
+UPDATE Vacantes
+SET inactiva = 1
+WHERE NOW() > fecha_vencimiento;
